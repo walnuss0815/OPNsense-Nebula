@@ -29,14 +29,14 @@ mkdir -p "$config_dir"
 
 ## Download example config file
 if [ ! -f "$config_file" ]; then
-  curl https://raw.githubusercontent.com/slackhq/nebula/master/examples/config.yml -sLo "$config_file"
+  cp "./nebula.init.d.sh" "$config_file"
 fi
 
 ## Install service
 if [ ! -f "$service_file" ]; then
-  curl https://raw.githubusercontent.com/slackhq/nebula/master/examples/service_scripts/nebula.init.d.sh -sLo "$service_file"
+  cp "./nebula.init.d.sh" "$service_file"
 fi
 
 ## Set permissions
-chmod 755 "$service_file"
+chmod 744 "$service_file"
 chown root:root "$service_file"
