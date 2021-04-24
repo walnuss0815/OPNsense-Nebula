@@ -39,4 +39,4 @@ fi
 
 ## Set permissions
 chmod 744 "$service_file"
-chown root:root "$service_file"
+chown 0:0 "$service_file"
